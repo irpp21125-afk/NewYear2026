@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bot Admin Panel</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="top">
+      <div class="brand">
+        <div class="logo">BP</div>
+        <div>
+          <div class="title">Bot Panel</div>
+          <div class="subtitle">Настройки / экономика / модерация</div>
+        </div>
+      </div>
+      <div class="apiKey">
+        <input id="apiKey" type="password" placeholder="X-API-Key" />
+        <button id="saveKey">Сохранить</button>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="card">
+        <h2>Состояние</h2>
+        <div class="row">
+          <button id="healthBtn">Проверить /api/health</button>
+          <pre id="healthOut" class="pre"></pre>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Пользователи</h2>
+        <div class="row">
+          <button id="loadUsers">Загрузить</button>
+        </div>
+        <div id="users" class="users"></div>
+      </section>
+
+      <section class="card">
+        <h2>Бан от игр</h2>
+        <div class="grid">
+          <label>
+            Discord user id
+            <input id="banUserId" placeholder="например 123..." />
+          </label>
+          <label>
+            Дней
+            <input id="banDays" type="number" value="7" />
+          </label>
+          <label class="span2">
+            Причина
+            <input id="banReason" placeholder="нарушение правил" />
+          </label>
+        </div>
+        <div class="row">
+          <button id="banBtn" class="danger">Забанить</button>
+          <button id="unbanBtn">Разбанить</button>
+        </div>
+        <pre id="banOut" class="pre"></pre>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
